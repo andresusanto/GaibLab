@@ -1,0 +1,23 @@
+<?xml version='1.0'?>
+<!-- Contoh Menu Kiri -->
+<root>
+	<node text="Grafika Komputer" action="0" value="">
+		<node text="Latihan Kuliah" action="0" value=""></node>
+		<node text="Text Book" action="0" value=""></node>
+		<node text="Referensi Luar" action="0" value=""></node>
+		<node text="Tugas" action="0" value=""></node>
+	</node>
+	
+	<node text="Kecerdasan Buatan" action="0" value="">
+		<node text="Latihan Kuliah" action="0" value=""></node>
+		<node text="Software Robot" action="0" value=""></node>
+		<node text="Tugas" action="0" value=""></node>
+	</node>
+	
+	<node text="Logika Informatika" action="0" value="">
+		<node text="Latihan Kuliah" action="0" value=""></node>
+		<node text="Text Book" action="0" value=""></node>
+		<node text="Referensi Luar" action="0" value=""></node>
+		<node text="Tugas" action="0" value=""></node>
+	</node>
+</root>
