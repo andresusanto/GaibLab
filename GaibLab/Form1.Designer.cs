@@ -1,6 +1,6 @@
 ﻿namespace GaibLab
 {
-    partial class Form1
+    partial class frmExplorer
     {
         /// <summary>
         /// Required designer variable.
@@ -29,17 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
-            "ContohTree.xlsx",
-            "Excel File"}, 1);
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Neural Network Introducion.pdf",
-            "PDF Document"}, 0);
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmExplorer));
             this.listView1 = new System.Windows.Forms.ListView();
             this.nameFileHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.smallIcon = new System.Windows.Forms.ImageList(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,6 +46,9 @@
             this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.menuFile = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mediumIcon = new System.Windows.Forms.ImageList(this.components);
+            this.largeIcon = new System.Windows.Forms.ImageList(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -61,23 +58,19 @@
             // 
             // listView1
             // 
-            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.nameFileHeader,
             this.columnHeader1});
-            this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2});
-            this.listView1.LargeImageList = this.imageList1;
-            this.listView1.Location = new System.Drawing.Point(6, 3);
+            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView1.LargeImageList = this.largeIcon;
+            this.listView1.Location = new System.Drawing.Point(0, 0);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(515, 374);
-            this.listView1.SmallImageList = this.imageList1;
+            this.listView1.Size = new System.Drawing.Size(827, 380);
+            this.listView1.SmallImageList = this.smallIcon;
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.SmallIcon;
+            this.listView1.DoubleClick += new System.EventHandler(this.listView1_DoubleClick);
             // 
             // nameFileHeader
             // 
@@ -89,12 +82,18 @@
             this.columnHeader1.Text = "Jenis File";
             this.columnHeader1.Width = 90;
             // 
-            // imageList1
+            // smallIcon
             // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "pdf.jpg");
-            this.imageList1.Images.SetKeyName(1, "xlsx.PNG");
+            this.smallIcon.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("smallIcon.ImageStream")));
+            this.smallIcon.TransparentColor = System.Drawing.Color.Transparent;
+            this.smallIcon.Images.SetKeyName(0, "MSACCESS_265.ico");
+            this.smallIcon.Images.SetKeyName(1, "EXCEL_258.ico");
+            this.smallIcon.Images.SetKeyName(2, "WINWORD_2.ico");
+            this.smallIcon.Images.SetKeyName(3, "POWERPNT_1312.ico");
+            this.smallIcon.Images.SetKeyName(4, "wiashext_107.ico");
+            this.smallIcon.Images.SetKeyName(5, "wmp_29102.ico");
+            this.smallIcon.Images.SetKeyName(6, "wmp_29107.ico");
+            this.smallIcon.Images.SetKeyName(7, "wmp_29105.ico");
             // 
             // menuStrip1
             // 
@@ -103,7 +102,7 @@
             this.viewToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(742, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1081, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -174,20 +173,17 @@
             // 
             // treeView1
             // 
-            this.treeView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.treeView1.Location = new System.Drawing.Point(3, 3);
+            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(206, 371);
+            this.treeView1.Size = new System.Drawing.Size(250, 380);
             this.treeView1.TabIndex = 2;
+            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.splitContainer1.Location = new System.Drawing.Point(0, 27);
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 24);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -197,19 +193,50 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.listView1);
-            this.splitContainer1.Size = new System.Drawing.Size(742, 377);
-            this.splitContainer1.SplitterDistance = 214;
+            this.splitContainer1.Size = new System.Drawing.Size(1081, 380);
+            this.splitContainer1.SplitterDistance = 250;
             this.splitContainer1.TabIndex = 3;
             // 
-            // Form1
+            // menuFile
+            // 
+            this.menuFile.Name = "menuFile";
+            this.menuFile.Size = new System.Drawing.Size(61, 4);
+            // 
+            // mediumIcon
+            // 
+            this.mediumIcon.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("mediumIcon.ImageStream")));
+            this.mediumIcon.TransparentColor = System.Drawing.Color.Transparent;
+            this.mediumIcon.Images.SetKeyName(0, "MSACCESS_265.ico");
+            this.mediumIcon.Images.SetKeyName(1, "EXCEL_258.ico");
+            this.mediumIcon.Images.SetKeyName(2, "WINWORD_2.ico");
+            this.mediumIcon.Images.SetKeyName(3, "POWERPNT_1312.ico");
+            this.mediumIcon.Images.SetKeyName(4, "wiashext_107.ico");
+            this.mediumIcon.Images.SetKeyName(5, "wmp_29102.ico");
+            this.mediumIcon.Images.SetKeyName(6, "wmp_29105.ico");
+            this.mediumIcon.Images.SetKeyName(7, "wmp_29107.ico");
+            // 
+            // largeIcon
+            // 
+            this.largeIcon.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("largeIcon.ImageStream")));
+            this.largeIcon.TransparentColor = System.Drawing.Color.Transparent;
+            this.largeIcon.Images.SetKeyName(0, "MSACCESS_265.ico");
+            this.largeIcon.Images.SetKeyName(1, "EXCEL_258.ico");
+            this.largeIcon.Images.SetKeyName(2, "WINWORD_2.ico");
+            this.largeIcon.Images.SetKeyName(3, "POWERPNT_1312.ico");
+            this.largeIcon.Images.SetKeyName(4, "wiashext_107.ico");
+            this.largeIcon.Images.SetKeyName(5, "wmp_29102.ico");
+            this.largeIcon.Images.SetKeyName(6, "wmp_29105.ico");
+            this.largeIcon.Images.SetKeyName(7, "wmp_29107.ico");
+            // 
+            // frmExplorer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(742, 404);
+            this.ClientSize = new System.Drawing.Size(1081, 404);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "frmExplorer";
             this.Text = "Laboratorium GaIB";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -228,7 +255,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.PageSetupDialog pageSetupDialog1;
-        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.ImageList smallIcon;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tampilanLembarKerjaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewMenu1;
@@ -240,6 +267,9 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.ContextMenuStrip menuFile;
+        private System.Windows.Forms.ImageList mediumIcon;
+        private System.Windows.Forms.ImageList largeIcon;
     }
 }
 

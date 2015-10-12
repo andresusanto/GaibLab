@@ -4,7 +4,7 @@
 	<node text="Grafika Komputer" action="0" value="">
 		<node text="Latihan Kuliah" action="0" value=""></node>
 		<node text="Text Book" action="0" value=""></node>
-		<node text="Referensi Luar" action="0" value=""></node>
+		<node text="Referensi Luar" action="1" value="COBA"></node>
 		<node text="Tugas" action="0" value=""></node>
 	</node>
 	

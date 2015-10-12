@@ -6,11 +6,11 @@ using System.Collections.Generic;
 
 namespace GaibLab
 {
-    public partial class Form1 : Form
+    public partial class frmExplorer : Form
     {
         string alamat = @"C:\Users\Andre\Documents\Visual Studio 2015\Projects\GaibLab\GaibLab\menu.xml";
 
-        public Form1()
+        public frmExplorer()
         {
             InitializeComponent();
 
@@ -51,22 +51,30 @@ namespace GaibLab
                     if (inTreeNode == null)
                     {
 
-                        treeView1.Nodes.Add(new TreeNode(xNode.Name));
+                        treeView1.Nodes.Add(new TreeNode(xNode.Attributes["text"].InnerText.ToString()));
                         tNode = treeView1.Nodes[i];
                     }
                     else
                     {
-                        inTreeNode.Nodes.Add(new TreeNode(xNode.Name));
+                        inTreeNode.Nodes.Add(new TreeNode(xNode.Attributes["text"].InnerText.ToString()));
                         tNode = inTreeNode.Nodes[i];
                     }
 
-                    
+                    if (!xNode.Attributes["action"].InnerText.ToString().Equals("0"))
+                    {
+                        tNode.Tag = xNode.Attributes["action"].InnerText.ToString() + "~|~" + xNode.Attributes["value"].InnerText.ToString();
+                    }
+
                     AddNode(xNode, tNode);
                 }
             }
             else
             {
                 inTreeNode.Text = inXmlNode.Attributes["text"].InnerText.ToString();//(inXmlNode.OuterXml).Trim();
+                if (!inXmlNode.Attributes["action"].InnerText.ToString().Equals("0"))
+                {
+                    inTreeNode.Tag = inXmlNode.Attributes["action"].InnerText.ToString() + "~|~" + inXmlNode.Attributes["value"].InnerText.ToString();
+                }
             }
         }
 
@@ -98,5 +106,38 @@ namespace GaibLab
             //listView1.View = 
         }
         
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            listView1.Items.Clear();
+            if (e.Node.Tag == null) return;
+            listView1.Items.Add("Video Pengantar Grafika");
+            listView1.Items[0].ImageIndex = 5;
+            listView1.Items[0].SubItems.Add("MP4");
+
+            listView1.Items.Add("Kuliah 1 - Frame Buffer");
+            listView1.Items[1].ImageIndex = 3;
+            listView1.Items[1].SubItems.Add("PPTX");
+
+            //MessageBox.Show(e.Node.Tag.ToString());
+        }
+
+        private void listView1_DoubleClick(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems == null) return;
+
+            for (int i = 0; i < listView1.SelectedItems.Count; i++)
+            {
+                if (listView1.SelectedItems[i].SubItems[1].Text == "MP4")
+                {
+                    frmPlayer fp = new frmPlayer();
+                    fp.Show();
+                }else if (listView1.SelectedItems[i].SubItems[1].Text == "PPTX")
+                {
+                    frmOffice fo = new frmOffice();
+                    fo.Show();
+                }
+            }
+        }
     }
 }
