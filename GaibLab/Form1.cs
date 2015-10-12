@@ -116,8 +116,8 @@ namespace GaibLab
             listView1.Items[0].SubItems.Add("MP4");
 
             listView1.Items.Add("Kuliah 1 - Frame Buffer");
-            listView1.Items[1].ImageIndex = 3;
-            listView1.Items[1].SubItems.Add("PPTX");
+            listView1.Items[1].ImageIndex = 2;
+            listView1.Items[1].SubItems.Add("DOCX");
 
             //MessageBox.Show(e.Node.Tag.ToString());
         }
@@ -132,7 +132,7 @@ namespace GaibLab
                 {
                     frmPlayer fp = new frmPlayer();
                     fp.Show();
-                }else if (listView1.SelectedItems[i].SubItems[1].Text == "PPTX")
+                }else if (listView1.SelectedItems[i].SubItems[1].Text == "DOCX")
                 {
                     frmOffice fo = new frmOffice();
                     fo.Show();

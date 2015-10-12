@@ -16,7 +16,7 @@ namespace GaibLab
         public frmOffice()
         {
             InitializeComponent();
-            browser.Navigate(@"C:\Users\Andre\Documents\Visual Studio 2015\Projects\GaibLab\GaibLab\bin\Debug\slide.pdf");
+            browser.Navigate(@"C:\Users\Andre\Documents\Visual Studio 2015\Projects\GaibLab\GaibLab\bin\Debug\doc.htm");
         }
 
         /*
