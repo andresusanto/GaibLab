@@ -33,6 +33,7 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.nameFileHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.largeIcon = new System.Windows.Forms.ImageList(this.components);
             this.smallIcon = new System.Windows.Forms.ImageList(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,12 +44,14 @@
             this.viewMenu3 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.viewMenu4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.recordingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.recordVoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.menuFile = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.mediumIcon = new System.Windows.Forms.ImageList(this.components);
-            this.largeIcon = new System.Windows.Forms.ImageList(this.components);
+            this.paintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -82,6 +85,19 @@
             this.columnHeader1.Text = "Jenis File";
             this.columnHeader1.Width = 90;
             // 
+            // largeIcon
+            // 
+            this.largeIcon.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("largeIcon.ImageStream")));
+            this.largeIcon.TransparentColor = System.Drawing.Color.Transparent;
+            this.largeIcon.Images.SetKeyName(0, "MSACCESS_265.ico");
+            this.largeIcon.Images.SetKeyName(1, "EXCEL_258.ico");
+            this.largeIcon.Images.SetKeyName(2, "WINWORD_2.ico");
+            this.largeIcon.Images.SetKeyName(3, "POWERPNT_1312.ico");
+            this.largeIcon.Images.SetKeyName(4, "wiashext_107.ico");
+            this.largeIcon.Images.SetKeyName(5, "wmp_29102.ico");
+            this.largeIcon.Images.SetKeyName(6, "wmp_29105.ico");
+            this.largeIcon.Images.SetKeyName(7, "wmp_29107.ico");
+            // 
             // smallIcon
             // 
             this.smallIcon.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("smallIcon.ImageStream")));
@@ -99,7 +115,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.viewToolStripMenuItem});
+            this.viewToolStripMenuItem,
+            this.recordingToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1081, 24);
@@ -171,6 +188,22 @@
             this.viewMenu4.Text = "Details";
             this.viewMenu4.Click += new System.EventHandler(this.ubahLembarKerja);
             // 
+            // recordingToolStripMenuItem
+            // 
+            this.recordingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.recordVoiceToolStripMenuItem,
+            this.paintToolStripMenuItem});
+            this.recordingToolStripMenuItem.Name = "recordingToolStripMenuItem";
+            this.recordingToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.recordingToolStripMenuItem.Text = "Learning";
+            // 
+            // recordVoiceToolStripMenuItem
+            // 
+            this.recordVoiceToolStripMenuItem.Name = "recordVoiceToolStripMenuItem";
+            this.recordVoiceToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.recordVoiceToolStripMenuItem.Text = "Record Voice";
+            this.recordVoiceToolStripMenuItem.Click += new System.EventHandler(this.recordVoiceToolStripMenuItem_Click);
+            // 
             // treeView1
             // 
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -215,18 +248,12 @@
             this.mediumIcon.Images.SetKeyName(6, "wmp_29105.ico");
             this.mediumIcon.Images.SetKeyName(7, "wmp_29107.ico");
             // 
-            // largeIcon
+            // paintToolStripMenuItem
             // 
-            this.largeIcon.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("largeIcon.ImageStream")));
-            this.largeIcon.TransparentColor = System.Drawing.Color.Transparent;
-            this.largeIcon.Images.SetKeyName(0, "MSACCESS_265.ico");
-            this.largeIcon.Images.SetKeyName(1, "EXCEL_258.ico");
-            this.largeIcon.Images.SetKeyName(2, "WINWORD_2.ico");
-            this.largeIcon.Images.SetKeyName(3, "POWERPNT_1312.ico");
-            this.largeIcon.Images.SetKeyName(4, "wiashext_107.ico");
-            this.largeIcon.Images.SetKeyName(5, "wmp_29102.ico");
-            this.largeIcon.Images.SetKeyName(6, "wmp_29105.ico");
-            this.largeIcon.Images.SetKeyName(7, "wmp_29107.ico");
+            this.paintToolStripMenuItem.Name = "paintToolStripMenuItem";
+            this.paintToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.paintToolStripMenuItem.Text = "Paint";
+            this.paintToolStripMenuItem.Click += new System.EventHandler(this.paintToolStripMenuItem_Click);
             // 
             // frmExplorer
             // 
@@ -270,6 +297,9 @@
         private System.Windows.Forms.ContextMenuStrip menuFile;
         private System.Windows.Forms.ImageList mediumIcon;
         private System.Windows.Forms.ImageList largeIcon;
+        private System.Windows.Forms.ToolStripMenuItem recordingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem recordVoiceToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem paintToolStripMenuItem;
     }
 }
 

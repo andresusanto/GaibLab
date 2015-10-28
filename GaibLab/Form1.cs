@@ -119,6 +119,10 @@ namespace GaibLab
             listView1.Items[1].ImageIndex = 2;
             listView1.Items[1].SubItems.Add("DOCX");
 
+            listView1.Items.Add("Sampel Gambar");
+            listView1.Items[2].ImageIndex = 4;
+            listView1.Items[2].SubItems.Add("JPG");
+
             //MessageBox.Show(e.Node.Tag.ToString());
         }
 
@@ -134,10 +138,27 @@ namespace GaibLab
                     fp.Show();
                 }else if (listView1.SelectedItems[i].SubItems[1].Text == "DOCX")
                 {
-                    frmOffice fo = new frmOffice();
+                    frmOffice fo = new frmOffice(@"C:\Users\Andre\Documents\Visual Studio 2015\Projects\GaibLab\GaibLab\bin\Debug\doc.htm");
+                    fo.Show();
+                }
+                else if (listView1.SelectedItems[i].SubItems[1].Text == "JPG")
+                {
+                    frmOffice fo = new frmOffice(@"C:\Users\Andre\Documents\Visual Studio 2015\Projects\GaibLab\GaibLab\bin\Debug\sample.jpg");
                     fo.Show();
                 }
             }
+        }
+
+        private void recordVoiceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRecord fr = new frmRecord();
+            fr.Show();
+        }
+
+        private void paintToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPaint fp = new frmPaint();
+            fp.Show();
         }
     }
 }

@@ -13,10 +13,10 @@ namespace GaibLab
 {
     public partial class frmOffice : Form
     {
-        public frmOffice()
+        public frmOffice(String alamat)
         {
             InitializeComponent();
-            browser.Navigate(@"C:\Users\Andre\Documents\Visual Studio 2015\Projects\GaibLab\GaibLab\bin\Debug\doc.htm");
+            browser.Navigate(alamat);
         }
 
         /*
